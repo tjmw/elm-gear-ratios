@@ -4,6 +4,7 @@ import GearRatios.GearRatio exposing (GearRatio, getCogValue, getRatioValue, get
 import GearRatios.Types exposing (Model, Msg(..))
 import Html exposing (Html, div, h1, img, text)
 import Html.Attributes exposing (src)
+import Round exposing (round)
 import SingleSlider as Slider
 import String exposing (fromFloat, fromInt)
 
@@ -39,5 +40,5 @@ renderGearRatio gearRatio =
     div []
         [ div [] [ text "Ring Size: ", text <| fromInt <| getRingValue gearRatio ]
         , div [] [ text "Cog Size: ", text <| fromInt <| getCogValue gearRatio ]
-        , div [] [ text "Ratio: ", text <| fromFloat <| getRatioValue gearRatio ]
+        , div [] [ text "Ratio: ", text <| round 2 <| getRatioValue gearRatio ]
         ]
