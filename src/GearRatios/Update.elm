@@ -1,5 +1,6 @@
 module GearRatios.Update exposing (init, update)
 
+import GearRatios.GearRatio exposing (defaultGearRatio)
 import GearRatios.Types exposing (Model, Msg(..))
 
 
@@ -10,4 +11,7 @@ update msg model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( { gearRatio = defaultGearRatio
+      }
+    , Cmd.none
+    )
