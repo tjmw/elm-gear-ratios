@@ -75,6 +75,11 @@ handleCogSliderMsg msg model =
     ( newModel, newCmd )
 
 
+nullFormatter : Float -> String
+nullFormatter _ =
+    ""
+
+
 init : ( Model, Cmd Msg )
 init =
     let
@@ -88,6 +93,9 @@ init =
                 , max = ringMax
                 , step = 1
                 , value = ringDefault
+                , currentValueFormatter = \_ _ -> ""
+                , minFormatter = nullFormatter
+                , maxFormatter = nullFormatter
             }
       , cogSlider =
             { initialSliderModel
@@ -95,6 +103,9 @@ init =
                 , max = cogMax
                 , step = 1
                 , value = cogDefault
+                , currentValueFormatter = \_ _ -> ""
+                , minFormatter = nullFormatter
+                , maxFormatter = nullFormatter
             }
       }
     , Cmd.none
