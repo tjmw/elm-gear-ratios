@@ -1,4 +1,20 @@
-module GearRatios.GearRatio exposing (Cog(..), GearRatio(..), Ring(..), defaultGearRatio, getCogValue, getRatioValue, getRingValue, ringDefault, ringMax, ringMin, updateRingSize)
+module GearRatios.GearRatio exposing
+    ( Cog(..)
+    , GearRatio(..)
+    , Ring(..)
+    , cogDefault
+    , cogMax
+    , cogMin
+    , defaultGearRatio
+    , getCogValue
+    , getRatioValue
+    , getRingValue
+    , ringDefault
+    , ringMax
+    , ringMin
+    , setCogSize
+    , setRingSize
+    )
 
 
 type Cog
@@ -11,6 +27,18 @@ type Ring
 
 type GearRatio
     = GearRatio Ring Cog
+
+
+cogMin =
+    11
+
+
+cogMax =
+    36
+
+
+cogDefault =
+    16
 
 
 ringMin =
@@ -44,6 +72,11 @@ getRatioValue (GearRatio (Ring ringValue) (Cog cogValue)) =
     toFloat ringValue / toFloat cogValue
 
 
-updateRingSize : GearRatio -> Ring -> GearRatio
-updateRingSize (GearRatio _ cog) ring =
+setRingSize : GearRatio -> Ring -> GearRatio
+setRingSize (GearRatio _ cog) ring =
+    GearRatio ring cog
+
+
+setCogSize : GearRatio -> Cog -> GearRatio
+setCogSize (GearRatio ring _) cog =
     GearRatio ring cog

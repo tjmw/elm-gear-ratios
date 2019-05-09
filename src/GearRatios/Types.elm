@@ -7,9 +7,11 @@ import SingleSlider as Slider exposing (..)
 type alias Model =
     { gearRatio : GearRatio
     , ringSlider : Slider.Model
+    , cogSlider : Slider.Model
     }
 
 
 type Msg
     = NoOp
-    | SliderMsg Slider.Msg
+    | CogSliderMsg Slider.Msg
+    | RingSliderMsg Slider.Msg

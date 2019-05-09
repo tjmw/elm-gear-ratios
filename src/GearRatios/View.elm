@@ -9,19 +9,28 @@ import String exposing (fromFloat, fromInt)
 
 
 view : Model -> Html Msg
-view { ringSlider, gearRatio } =
+view { cogSlider, ringSlider, gearRatio } =
     div []
-        [ renderSlider ringSlider
+        [ renderRingSlider ringSlider
+        , renderCogSlider cogSlider
         , renderGearRatio
             gearRatio
         ]
 
 
-renderSlider : Slider.Model -> Html Msg
-renderSlider slider =
+renderRingSlider : Slider.Model -> Html Msg
+renderRingSlider slider =
     div []
         [ text "Ring Size: "
-        , Slider.view slider |> Html.map SliderMsg
+        , Slider.view slider |> Html.map RingSliderMsg
+        ]
+
+
+renderCogSlider : Slider.Model -> Html Msg
+renderCogSlider slider =
+    div []
+        [ text "Cog Size: "
+        , Slider.view slider |> Html.map CogSliderMsg
         ]
 
 
