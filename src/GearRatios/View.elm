@@ -14,8 +14,7 @@ view { cogSlider, ringSlider, gearRatio } =
     div []
         [ renderRingSlider ringSlider
         , renderCogSlider cogSlider
-        , renderGearRatio
-            gearRatio
+        , renderGearRatio gearRatio
         ]
 
 
