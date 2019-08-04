@@ -6,8 +6,8 @@ This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/
 
 ## Run the app
 
-`elm-app start`
+`$ elm-app start`
 
 ## Build for production
 
-`elm-app build`
+`$ ./bin/build`
